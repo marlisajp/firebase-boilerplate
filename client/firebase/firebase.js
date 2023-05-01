@@ -16,7 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Add the onAuthStateChanged listener
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     try {

@@ -11,7 +11,7 @@ const SignUp = () => {
     e.preventDefault();
     dispatch(signUp(email, password));
   };
-
+  // ! add more fields for displayName, photoUrl, etc.
   return (
     <div>
       <h2>Sign Up</h2>

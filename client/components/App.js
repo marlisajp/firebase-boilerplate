@@ -1,15 +1,3 @@
-// import React from 'react';
-
-// const App = () => {
-//   return (
-//     <div className='app-container'>
-//       <p>My App</p>
-//       <p>Add Cool Stuff Here</p>
-//     </div>
-//   );
-// };
-
-// export default App;
 import React from 'react';
 import { useSelector } from 'react-redux';
 import SignUp from './User/SignUp';
