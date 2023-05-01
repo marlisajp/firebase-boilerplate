@@ -11,8 +11,8 @@ npm (v6.x.x or later)
 
 ## Getting Started
 
-1. Clone the repository:
-   `git clone https://github.com/marlisajp/firebase-boilerplate.git`
+1. Fork & clone the repository:
+   `git clone https://github.com/your-user-name/firebase-boilerplate.git`
 
 - Navigate to the project directory:
   `cd firebase-boilerplate`
@@ -27,7 +27,7 @@ npm (v6.x.x or later)
 - Download the Firebase configuration JSON file from the Firebase Console by navigating to Project settings > Service accounts > Generate new private key. Save this JSON file in the /server/api/firebase/ directory.
 
 - Create a .env file in the project root directory and fill in the required environment variables:
-
+```
 FIREBASE_API_KEY=your_firebase_api_key
 FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
 FIREBASE_DATABASE_URL=your_firebase_database_url
@@ -36,7 +36,7 @@ FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
 FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
 FIREBASE_APP_ID=your_firebase_app_id
 FIREBASE_MEASUREMENT_ID=your_firebase_measurement_id
-
+```
 Replace the placeholder values with your Firebase project's actual configuration details.
 
 ## Make Yourself an Admin
@@ -47,18 +47,21 @@ Replace the placeholder values with your Firebase project's actual configuration
 
 3. In the /server/api/firebase/ directory, create a new file called setAdminClaim.js with the following content:
 
-`const admin = require('./firebaseAdmin');`
+```
+const admin = require('./firebaseAdmin');
 
-`async function setAdminClaim(uid) {`
-`try {`
-`await admin.auth().setCustomUserClaims(uid, { admin: true });`
-`console.log('Custom claims set for admin user:', uid);`
-`} catch (error) {`
-`console.error('Error setting custom claims:', error);`
-`}`
-`}`
+async function setAdminClaim(uid) {
+   try {
+      await admin.auth().setCustomUserClaims(uid, { admin: true });
+      console.log('Custom claims set for admin user:', uid);
+   } catch (error) {
+      console.error('Error setting custom claims:', error);
+   }
+}
 
-`setAdminClaim('your_uid_here');`
+setAdminClaim('your_uid_here');
+``` 
+
 Replace 'your_uid_here' with your actual UID from step 2.
 
 4. Run the script:
@@ -68,16 +71,9 @@ Replace 'your_uid_here' with your actual UID from step 2.
 ## Running the Application
 
 Start the development server:
-`npm run start`
+`npm run start-dev`
 Open your browser and navigate to http://localhost:3000/.
 Test the authentication functionality and the admin-protected routes using your admin account.
 
-## Contributing
-
-If you'd like to contribute to this project, please feel free to submit a pull request or open an issue to discuss potential changes or improvements.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more information.
 
 I hope this README provides clear instructions on how to set up and use your Firebase boilerplate. If you need further assistance or have any questions, please let me know.
