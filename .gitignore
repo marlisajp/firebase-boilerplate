@@ -2,3 +2,4 @@ node_modules
 bundle.js
 bundle.js.map
 .env
+/server/firebase/boilerplate-e0ce9-firebase-adminsdk-t04nz-ad98a6a24e.json
