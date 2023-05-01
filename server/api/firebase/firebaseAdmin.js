@@ -1,4 +1,3 @@
-// firebaseAdmin.js
 const admin = require('firebase-admin');
 const serviceAccount = require('./your-firebase-service-account.json');
 
